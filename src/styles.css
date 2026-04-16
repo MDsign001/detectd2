@@ -6,7 +6,7 @@
 
 /*
  * detect.nl Companion design tokens.
- * Brand palette converted to oklch:
+ * Brand palette (omgezet naar oklch):
  *   Primary  #1E73BE -> oklch(0.563 0.142 248)
  *   Secondary #0F5A9C -> oklch(0.467 0.137 251)
  *   Foreground #333  -> oklch(0.30 0 0)
@@ -21,7 +21,6 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -43,6 +42,7 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
   --shadow-card: var(--shadow-card);
+  --font-display: "Syne", system-ui, sans-serif;
 }
 
 :root {
@@ -59,8 +59,8 @@
   --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.965 0 0);
   --muted-foreground: oklch(0.55 0 0);
-  --accent: oklch(0.965 0 0);
-  --accent-foreground: oklch(0.30 0 0);
+  --accent: oklch(0.93 0.04 248);
+  --accent-foreground: oklch(0.467 0.137 251);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.93 0 0);
@@ -99,6 +99,12 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
   }
 }

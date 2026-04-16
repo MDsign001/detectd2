@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { AppHeader } from "@/components/AppHeader";
-import { AppFooter } from "@/components/AppFooter";
+import { PageShell } from "@/components/PageShell";
 import { ProgramCard } from "@/components/ProgramCard";
-import { Button } from "@/components/ui/button";
 import { programs } from "@/data/programs";
 
 export const Route = createFileRoute("/programs")({
@@ -14,7 +12,7 @@ export const Route = createFileRoute("/programs")({
       {
         name: "description",
         content:
-          "Bekijk en blader door zoekprogramma's met instellingen voor gevoeligheid, reactietijd en discriminatie.",
+          "Negen zorgvuldig samengestelde zoekprogramma's voor de XP DEUS II — met instellingen, audio, EQ en tonen.",
       },
       { property: "og:title", content: "Programma's — detect.nl Companion" },
       {
@@ -33,41 +31,32 @@ function ProgramsPage() {
   const atEnd = index === programs.length - 1;
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-md flex-col bg-background">
-      <AppHeader showBack />
-      <main className="flex-1 px-3 py-4">
-        <div className="mb-3 flex items-center justify-between px-1">
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Programma {index + 1} van {programs.length}
-          </p>
-        </div>
+    <PageShell title="Programma's" hideFooter>
+      <ProgramCard program={program} />
 
-        <ProgramCard program={program} />
-
-        <div className="mt-4 flex gap-3">
-          <Button
-            onClick={() => setIndex((i) => Math.max(0, i - 1))}
-            disabled={atStart}
-            className="flex-1 hover:bg-secondary"
-          >
-            <ChevronLeft className="h-4 w-4" />
-            Vorige
-          </Button>
-          <Button
-            onClick={() => setIndex((i) => Math.min(programs.length - 1, i + 1))}
-            disabled={atEnd}
-            className="flex-1 hover:bg-secondary"
-          >
-            Volgende
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
-
-        <p className="mt-4 px-2 text-center text-xs italic text-muted-foreground">
-          Tip: het beste programma is dat ene waar je net niet aan dacht.
-        </p>
-      </main>
-      <AppFooter />
-    </div>
+      <nav className="sticky bottom-0 -mx-4 mt-4 flex items-center justify-between border-t border-border bg-background/95 px-5 py-3 backdrop-blur">
+        <button
+          type="button"
+          onClick={() => setIndex((i) => Math.max(0, i - 1))}
+          disabled={atStart}
+          className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-[13px] font-semibold text-foreground transition-colors hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:border-transparent disabled:bg-transparent disabled:text-muted-foreground/50"
+        >
+          <ChevronLeft className="h-4 w-4" />
+          Vorige
+        </button>
+        <span className="text-xs font-semibold text-muted-foreground">
+          <span className="text-foreground">{index + 1}</span> / {programs.length}
+        </span>
+        <button
+          type="button"
+          onClick={() => setIndex((i) => Math.min(programs.length - 1, i + 1))}
+          disabled={atEnd}
+          className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-[13px] font-semibold text-foreground transition-colors hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:border-transparent disabled:bg-transparent disabled:text-muted-foreground/50"
+        >
+          Volgende
+          <ChevronRight className="h-4 w-4" />
+        </button>
+      </nav>
+    </PageShell>
   );
 }
