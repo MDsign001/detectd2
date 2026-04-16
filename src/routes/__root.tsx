@@ -33,7 +33,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "De companion-app voor metaaldetectoristen: programma's, instellingen en pakkende tips.",
+          "De companion-app voor metaaldetectoristen met een XP DEUS II: programma's, handleidingen, firmware en tips.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -44,6 +44,14 @@ export const Route = createRootRoute({
         rel: "icon",
         type: "image/png",
         href: "https://cdn.webshopapp.com/shops/272625/themes/182919/v/2092953/assets/logo.png?20231108145809",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap",
       },
     ],
   }),
