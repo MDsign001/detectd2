@@ -29,29 +29,21 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "detect.nl Companion" },
-      {
-        name: "description",
-        content:
-          "De companion-app voor metaaldetectoristen met een XP DEUS II: programma's, handleidingen, firmware en tips.",
-      },
+      { title: "DetectD2" },
+      { name: "description", content: "Gemaakt door Detect.nl. Voor gebruikers van de Deus II metaaldetector van het merk XP Metaldetectors." },
+      { name: "author", content: "Lovable" },
+      { property: "og:title", content: "DetectD2" },
+      { property: "og:description", content: "Gemaakt door Detect.nl. Voor gebruikers van de Deus II metaaldetector van het merk XP Metaldetectors." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "DetectD2" },
+      { name: "twitter:description", content: "Gemaakt door Detect.nl. Voor gebruikers van de Deus II metaaldetector van het merk XP Metaldetectors." },
     ],
     links: [
-      { rel: "stylesheet", href: appCss },
-      {
-        rel: "icon",
-        type: "image/png",
-        href: "https://cdn.webshopapp.com/shops/272625/themes/182919/v/2092953/assets/logo.png?20231108145809",
-      },
-      {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap",
+        href: appCss,
       },
     ],
   }),
