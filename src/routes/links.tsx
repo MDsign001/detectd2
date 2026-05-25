@@ -31,15 +31,26 @@ function LinksPage() {
             {group}
           </div>
           <ul className="space-y-1.5">
-            {items.map((name) => (
-              <li
-                key={name}
-                className="flex cursor-pointer items-center justify-between rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-primary"
-              >
-                <span className="text-sm font-medium text-foreground">
-                  {name}
-                </span>
-                <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
+            {items.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-primary"
+                >
+                  <span className="flex flex-col">
+                    <span className="text-sm font-medium text-foreground">
+                      {item.name}
+                    </span>
+                    {item.description && (
+                      <span className="text-xs text-muted-foreground">
+                        {item.description}
+                      </span>
+                    )}
+                  </span>
+                  <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+                </a>
               </li>
             ))}
           </ul>
