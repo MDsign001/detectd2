@@ -1,0 +1,126 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageShell } from "@/components/PageShell";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { faq } from "@/data/faq";
+
+export const Route = createFileRoute("/faq")({
+  head: () => ({
+    meta: [
+      { title: "Veelgestelde vragen — detect.nl Companion" },
+      {
+        name: "description",
+        content:
+          "Antwoorden op veelgestelde vragen over de XP Deus II: geschikt voor beginners, vergelijking met andere detectoren en goudgevoeligheid.",
+      },
+    ],
+  }),
+  component: FaqPage,
+});
+
+function FaqPage() {
+  return (
+    <PageShell title="FAQ">
+      <section className="rounded-2xl border border-border bg-card px-4 py-4 shadow-card">
+        <h1 className="font-display text-2xl font-extrabold text-primary">
+          Veelgestelde vragen
+        </h1>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Alles wat je wilt weten over de XP Deus II — kort, eerlijk en
+          to-the-point.
+        </p>
+      </section>
+
+      <Accordion type="single" collapsible className="mt-4 space-y-2">
+        {faq.map((item) => (
+          <AccordionItem
+            key={item.id}
+            value={item.id}
+            className="rounded-2xl border border-border bg-card px-4 shadow-card"
+          >
+            <AccordionTrigger className="text-left hover:no-underline">
+              <div>
+                <div className="text-base font-semibold text-foreground">
+                  {item.question}
+                </div>
+                <div className="mt-1 text-xs font-normal text-muted-foreground">
+                  {item.subtitle}
+                </div>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className="space-y-4 text-sm leading-relaxed text-foreground/90">
+              <p>{item.intro}</p>
+
+              {item.table && (
+                <div className="overflow-x-auto rounded-xl border border-border">
+                  <table className="w-full text-left text-xs">
+                    <thead className="bg-muted text-foreground">
+                      <tr>
+                        {item.table.headers.map((h) => (
+                          <th key={h} className="px-3 py-2 font-semibold">
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {item.table.rows.map((row, i) => (
+                        <tr
+                          key={i}
+                          className="border-t border-border odd:bg-background even:bg-muted/40"
+                        >
+                          {row.map((c, j) => (
+                            <td key={j} className="px-3 py-2 align-top">
+                              {c}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
+              {item.sections?.map((sec) => (
+                <div key={sec.heading}>
+                  <h3 className="mb-1 text-sm font-semibold text-primary">
+                    {sec.heading}
+                  </h3>
+                  {sec.paragraph && <p>{sec.paragraph}</p>}
+                  {sec.bullets && (
+                    <ul className="ml-4 list-disc space-y-1">
+                      {sec.bullets.map((b) => (
+                        <li key={b}>{b}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+
+              {item.closing && <p>{item.closing}</p>}
+
+              <div className="rounded-xl border border-border bg-muted px-3 py-2 text-xs text-muted-foreground">
+                <span className="font-semibold text-foreground">
+                  {item.source.label}:
+                </span>{" "}
+                {item.source.text}{" "}
+                <a
+                  href={item.source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline underline-offset-2 hover:text-secondary"
+                >
+                  Bekijk bron
+                </a>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </PageShell>
+  );
+}
