@@ -69,12 +69,18 @@ function HomePage() {
         />
       </section>
 
-      <section className="mt-4">
+      <section className="mt-2.5 grid grid-cols-2 gap-2.5">
         <Tile
           to="/links"
           emoji="🔗"
           label="Bronnen & Links"
-          desc="Communities, kanalen en webshops voor meer detect-magie"
+          desc="Communities, kanalen en webshops"
+        />
+        <Tile
+          to="/faq"
+          emoji="❓"
+          label="FAQ"
+          desc="Antwoorden op veelgestelde vragen"
         />
       </section>
 
