@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Fragment, type ReactNode } from "react";
 import { PageShell } from "@/components/PageShell";
 import {
   Accordion,
@@ -15,12 +16,38 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "Antwoorden op veelgestelde vragen over de XP Deus II: geschikt voor beginners, vergelijking met andere detectoren en goudgevoeligheid.",
+          "Tien veelgestelde vragen over de XP Deus II: voor beginners, vergelijking, goud, batterijduur, accessoires en meer.",
       },
     ],
   }),
   component: FaqPage,
 });
+
+// Render text containing [label](url) as inline links.
+function renderInline(text: string): ReactNode {
+  const parts: ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let key = 0;
+  while ((m = regex.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    parts.push(
+      <a
+        key={key++}
+        href={m[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary underline underline-offset-2 hover:text-secondary"
+      >
+        {m[1]}
+      </a>,
+    );
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts.map((p, i) => <Fragment key={i}>{p}</Fragment>);
+}
 
 function FaqPage() {
   return (
@@ -53,7 +80,7 @@ function FaqPage() {
               </div>
             </AccordionTrigger>
             <AccordionContent className="space-y-4 text-sm leading-relaxed text-foreground/90">
-              <p>{item.intro}</p>
+              <p>{renderInline(item.intro)}</p>
 
               {item.table && (
                 <div className="overflow-x-auto rounded-xl border border-border">
@@ -75,7 +102,7 @@ function FaqPage() {
                         >
                           {row.map((c, j) => (
                             <td key={j} className="px-3 py-2 align-top">
-                              {c}
+                              {renderInline(c)}
                             </td>
                           ))}
                         </tr>
@@ -90,32 +117,24 @@ function FaqPage() {
                   <h3 className="mb-1 text-sm font-semibold text-primary">
                     {sec.heading}
                   </h3>
-                  {sec.paragraph && <p>{sec.paragraph}</p>}
+                  {sec.paragraph && <p>{renderInline(sec.paragraph)}</p>}
                   {sec.bullets && (
                     <ul className="ml-4 list-disc space-y-1">
                       {sec.bullets.map((b) => (
-                        <li key={b}>{b}</li>
+                        <li key={b}>{renderInline(b)}</li>
                       ))}
                     </ul>
                   )}
                 </div>
               ))}
 
-              {item.closing && <p>{item.closing}</p>}
+              {item.closing && <p>{renderInline(item.closing)}</p>}
 
               <div className="rounded-xl border border-border bg-muted px-3 py-2 text-xs text-muted-foreground">
                 <span className="font-semibold text-foreground">
                   {item.source.label}:
                 </span>{" "}
-                {item.source.text}{" "}
-                <a
-                  href={item.source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary underline underline-offset-2 hover:text-secondary"
-                >
-                  Bekijk bron
-                </a>
+                {item.source.text}
               </div>
             </AccordionContent>
           </AccordionItem>
