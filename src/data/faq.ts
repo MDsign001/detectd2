@@ -1,9 +1,5 @@
-export type FaqItem = {
-  id: string;
-  question: string;
-  subtitle: string;
-  answer: string; // markdown-lite (we render structured below)
-};
+// Text fields may contain inline links in markdown form: [label](https://url)
+// These are parsed and rendered as <a> in the FAQ page.
 
 export type FaqEntry = {
   id: string;
@@ -12,10 +8,11 @@ export type FaqEntry = {
   intro: string;
   sections?: { heading: string; bullets?: string[]; paragraph?: string }[];
   table?: { headers: string[]; rows: string[][] };
-  comparisons?: string[];
   closing?: string;
-  source: { label: string; url: string; text: string };
+  source: { label: string; text: string };
 };
+
+const DEUS = "[XP Deus II](https://www.detect.nl/nl/xp-deus-2/)";
 
 export const faq: FaqEntry[] = [
   {
@@ -23,26 +20,24 @@ export const faq: FaqEntry[] = [
     subtitle:
       "Nieuwe hobbyisten willen weten of deze detector gebruiksvriendelijk genoeg is om mee te starten.",
     question: "Is de XP Deus II een goede metaaldetector voor beginners?",
-    intro:
-      "Ja, de XP Deus II is ondanks zijn geavanceerde mogelijkheden verrassend toegankelijk voor beginners. De detector beschikt over vooraf ingestelde zoekprogramma's waarmee je direct kunt starten zonder diepgaande technische kennis.",
+    intro: `Ja, de ${DEUS} is ondanks zijn geavanceerde mogelijkheden verrassend toegankelijk voor beginners. De detector beschikt over vooraf ingestelde zoekprogramma's waarmee je direct kunt starten zonder diepgaande technische kennis.`,
     sections: [
       {
         heading: "Belangrijke voordelen voor starters",
         bullets: [
-          "Lichtgewicht ontwerp waardoor lange zoektochten minder vermoeiend zijn",
+          "Lichtgewicht ontwerp voor lange zoeksessies",
           "Volledig draadloos systeem",
-          "Eenvoudige basisbediening via de afstandsbediening of hoofdtelefoon",
-          "Vooraf ingestelde programma's voor munten, relics, strand en algemeen gebruik",
-          "Uitstekende target separation waardoor afval en waardevolle targets beter onderscheiden worden",
+          "Eenvoudige basisbediening",
+          "Vooraf ingestelde zoekprogramma's",
+          "Uitstekende target separation",
         ],
       },
     ],
     closing:
-      "Wel heeft de Deus II een leercurve. De vele instellingen kunnen in het begin overweldigend lijken. Beginners die bereid zijn enkele uren te investeren in oefenen en begrijpen hoe discriminatie, gevoeligheid en frequenties werken, halen echter snel veel uit het toestel.",
+      "Wel heeft de Deus II een leercurve. Beginners die bereid zijn tijd te investeren in oefenen en instellingen begrijpen, halen snel veel uit het toestel.",
     source: {
       label: "Bronverificatie",
-      url: "https://www.xpmetaldetectors.com",
-      text: "De specificaties zoals draadloze werking, Fast Multi Frequency-technologie en voorgeprogrammeerde modi zijn bevestigd via de officiële website van XP Metal Detectors.",
+      text: "Specificaties bevestigd via XP Metal Detectors.",
     },
   },
   {
@@ -51,43 +46,28 @@ export const faq: FaqEntry[] = [
       "Kopers vergelijken verschillende merken en modellen voordat ze investeren.",
     question:
       "Hoe presteert de XP Deus II vergeleken met andere high-end metaaldetectoren?",
-    intro:
-      "De XP Deus II behoort tot de absolute topklasse van moderne metaaldetectoren en onderscheidt zich vooral door snelheid, gewicht en draadloze technologie.",
+    intro: `De ${DEUS} behoort tot de absolute topklasse van moderne metaaldetectoren.`,
     table: {
       headers: ["Eigenschap", "XP Deus II", "Veel concurrenten"],
       rows: [
         ["Gewicht", "Zeer licht", "Vaak zwaarder"],
         ["Draadloos", "Volledig draadloos", "Vaak deels bekabeld"],
         ["Multifrequentie", "FMF simultaan", "Niet altijd simultaan"],
-        ["Reactiesnelheid", "Uitstekend", "Gemiddeld tot goed"],
-        ["Waterdicht", "Tot 20 meter", "Vaak minder diep"],
-        ["Software updates", "Regelmatig", "Wisselend"],
       ],
     },
     sections: [
       {
-        heading: "Vergelijking met bekende concurrenten",
+        heading: "Vergelijking met concurrenten",
         bullets: [
-          "Tegenover de Minelab Manticore biedt de Deus II vaak snellere recovery speed en lager gewicht.",
-          "Vergeleken met de Minelab Equinox 900 heeft de Deus II meer instelmogelijkheden en een volledig draadloos ecosysteem.",
-          "Ten opzichte van de Nokta Legend is de Deus II doorgaans duurder, maar ook verfijnder in audio en target-analyse.",
-        ],
-      },
-      {
-        heading: "Waar blinkt de Deus II vooral uit?",
-        bullets: [
-          "IJzerrijke grond",
-          "Oude akkers",
-          "Snelle target separation",
-          "Stranddetectie",
-          "Lange detectiesessies dankzij laag gewicht",
+          "Vergeleken met de [Minelab Manticore](https://www.detect.nl/nl/minelab-manticore/) is de Deus II vaak sneller in target separation.",
+          "Tegenover de [Minelab Equinox 900](https://www.detect.nl/nl/minelab-equinox-900/) biedt hij meer draadloze integratie.",
+          "Vergeleken met de [Nokta The Legend](https://www.detect.nl/nl/nokta-the-legend/) is de Deus II verfijnder qua audio-analyse.",
         ],
       },
     ],
     source: {
       label: "Bronverificatie",
-      url: "https://www.xpmetaldetectors.com",
-      text: "Technische kenmerken zoals FMF-technologie, waterdichtheid en draadloze architectuur zijn bevestigd via XP Metal Detectors Official Site. Vergelijkingen zijn gebaseerd op publiek beschikbare productspecificaties van de betreffende fabrikanten.",
+      text: "Vergelijkingen gebaseerd op officiële productspecificaties van fabrikanten.",
     },
   },
   {
@@ -95,38 +75,191 @@ export const faq: FaqEntry[] = [
     subtitle:
       "Schatzoekers willen weten of de detector geschikt is voor goudvondsten.",
     question: "Kan de XP Deus II goud detecteren?",
-    intro:
-      "Ja, de XP Deus II kan goud detecteren, inclusief kleine gouden objecten zoals sieraden, dunne ringen en sommige natuurlijke goudfragmenten. De detector gebruikt simultane multifrequentie-technologie (FMF), waardoor hij gevoelig blijft voor zowel kleine als diepe targets. Hogere frequenties zijn vooral effectief voor kleine goudobjecten.",
+    intro: `Ja, de ${DEUS} kan goud detecteren, inclusief kleine sieraden en sommige natuurlijke goudfragmenten.`,
     sections: [
       {
-        heading: "Welke soorten goud kan hij vinden?",
-        bullets: [
-          "Gouden ringen",
-          "Kettingen",
-          "Munten",
-          "Kleine sieraden",
-          "Kleine nuggets onder geschikte omstandigheden",
-        ],
-      },
-      {
-        heading: "Belangrijk om te weten",
+        heading: "Dankzij simultane multifrequentie",
         paragraph:
-          "De Deus II is primair ontworpen als allround metaaldetector, niet als gespecialiseerde goudzoekmachine voor extreme nugget hunting zoals sommige dedicated prospecting detectors. Toch presteert hij zeer sterk op stranden, in parken, op akkerland, bij ondiepe goudtargets en bij kleine sieraden in vervuilde grond.",
+          "De detector blijft gevoelig voor zowel kleine als diepe targets.",
       },
       {
-        heading: "Beste instellingen voor goud",
+        heading: "Veelgevonden goudobjecten",
+        bullets: ["Gouden ringen", "Kettingen", "Munten", "Kleine sieraden"],
+      },
+    ],
+    closing:
+      "Voor goud zoeken gebruiken veel detectoristen hogere frequenties en lage discriminatie-instellingen.",
+    source: {
+      label: "Bronverificatie",
+      text: "Technische specificaties bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "metalen",
+    subtitle: "Begrijpen welke metaalsoorten de detector kan identificeren.",
+    question:
+      "Welke soorten metaal kan de XP Deus II detecteren en herkennen?",
+    intro: `De ${DEUS} kan vrijwel alle gangbare metalen detecteren.`,
+    sections: [
+      {
+        heading: "Herkenbare metaalsoorten",
         bullets: [
-          "Hogere frequenties",
-          "Lage discriminatie",
-          "Hoge gevoeligheid",
-          "Langzamere sweep-snelheid",
+          "IJzer",
+          "Koper",
+          "Zilver",
+          "Goud",
+          "Aluminium",
+          "Brons",
         ],
       },
     ],
+    closing:
+      "Dankzij Target ID en audiotonen kan de detector vaak onderscheid maken tussen waardevolle objecten en afval.",
     source: {
       label: "Bronverificatie",
-      url: "https://www.xpmetaldetectors.com",
-      text: "FMF-technologie, frequentiebereik en goudgevoeligheid zijn bevestigd via de officiële productinformatie van XP Metal Detectors.",
+      text: "Detectiefuncties bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "batterij",
+    subtitle:
+      "Praktische vraag over gebruiksduur tijdens lange zoektochten.",
+    question: "Hoe lang gaat de batterij van de XP Deus II mee?",
+    intro: `De ${DEUS} staat bekend om zijn uitstekende batterijduur.`,
+    table: {
+      headers: ["Onderdeel", "Gemiddelde gebruiksduur"],
+      rows: [
+        ["Zoekspoel", "Tot circa 20 uur"],
+        ["Afstandsbediening", "Tot circa 25 uur"],
+        ["Hoofdtelefoon", "Tot circa 30 uur"],
+      ],
+    },
+    closing:
+      "Veel gebruikers nemen een [powerbank](https://www.detect.nl/nl/accessoires/) mee tijdens lange detectiedagen.",
+    source: {
+      label: "Bronverificatie",
+      text: "Batterijgegevens bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "prijs",
+    subtitle:
+      "Budgetbewuste kopers beoordelen of de investering logisch is.",
+    question: "Is de XP Deus II de hoge prijs waard?",
+    intro: `Voor veel serieuze detectoristen is de ${DEUS} absoluut zijn prijs waard.`,
+    sections: [
+      {
+        heading: "Wat krijg je voor je geld",
+        bullets: [
+          "Simultane multifrequentie",
+          "Volledig draadloos ontwerp",
+          "Waterdicht tot 20 meter",
+          "Zeer laag gewicht",
+          "Snelle target separation",
+        ],
+      },
+    ],
+    closing:
+      "Vooral fanatieke hobbyisten en strandzoekers halen veel voordeel uit de geavanceerde functies.",
+    source: {
+      label: "Bronverificatie",
+      text: "Productspecificaties bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "accessoires",
+    subtitle:
+      "Nieuwe eigenaren zoeken nuttige accessoires en extra uitrusting.",
+    question: "Welke accessoires zijn handig bij een nieuwe XP Deus II?",
+    intro: `Bij een ${DEUS} zijn enkele accessoires bijzonder nuttig.`,
+    sections: [
+      {
+        heading: "Aanraders",
+        bullets: [
+          "[XP MI-6 Pinpointer](https://www.detect.nl/nl/xp-mi-6-pinpointer/)",
+          "[Garrett Pro-Pointer AT](https://www.detect.nl/nl/garrett-pro-pointer-at/)",
+          "Extra [zoekspoelen](https://www.detect.nl/nl/zoekspoelen/)",
+          "[Scheppen en graafgereedschap](https://www.detect.nl/nl/scheppen/)",
+          "Beschermhoezen en accessoires",
+        ],
+      },
+    ],
+    closing:
+      "Veel Deus II-gebruikers beschouwen een goede pinpointer als de beste eerste upgrade.",
+    source: {
+      label: "Bronverificatie",
+      text: "Compatibele accessoires bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "vervoer",
+    subtitle:
+      "Praktische tips voor transport, opslag en bescherming.",
+    question: "Hoe neem ik de XP Deus II veilig mee naar detectielocaties?",
+    intro: `De ${DEUS} is ontworpen voor draagbaarheid en eenvoudig transport.`,
+    sections: [
+      {
+        heading: "Wat het meenemen makkelijk maakt",
+        bullets: [
+          "Lichtgewicht constructie",
+          "Opvouwbare steel",
+          "Compact draadloos ontwerp",
+        ],
+      },
+    ],
+    closing:
+      "Gebruik bij voorkeur een [detectorrugzak](https://www.detect.nl/nl/tassen-en-rugzakken/) of beschermende hardcase.",
+    source: {
+      label: "Bronverificatie",
+      text: "Producteigenschappen bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "problemen",
+    subtitle:
+      "Problemen oplossen bij storingen of onverwacht gedrag.",
+    question: "Waarom functioneert mijn XP Deus II niet correct?",
+    intro: `Problemen met de ${DEUS} worden meestal veroorzaakt door instellingen of omgevingsfactoren.`,
+    sections: [
+      {
+        heading: "Veelvoorkomende oorzaken",
+        bullets: [
+          "Te hoge gevoeligheid",
+          "Elektromagnetische storing",
+          "Verouderde firmware",
+          "Problemen met de zoekspoel",
+        ],
+      },
+    ],
+    closing:
+      "Controleer altijd eerst updates, instellingen en verbindingen voordat je technische support inschakelt.",
+    source: {
+      label: "Bronverificatie",
+      text: "Functionaliteiten bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "huren",
+    subtitle:
+      "Budgetvriendelijk alternatief voor mensen die eerst willen proberen.",
+    question:
+      "Kun je beter een metaaldetector huren voordat je er een koopt?",
+    intro:
+      "Ja, huren is voor veel beginners een slimme manier om de hobby eerst uit te proberen zonder direct een grote investering te doen.",
+    sections: [
+      {
+        heading: "Voordelen van huren",
+        bullets: [
+          "Lagere instapkosten",
+          "Verschillende modellen testen",
+          "Ideaal voor vakanties of beginners",
+        ],
+      },
+    ],
+    closing: `Wie regelmatig gaat zoeken, kiest uiteindelijk vaak voor een eigen ${DEUS} of ander high-end model. Bekijk het aanbod [metaaldetectors](https://www.detect.nl/nl/metaaldetectors/) voor verschillende instap- en premium modellen.`,
+    source: {
+      label: "Bronverificatie",
+      text: "Productpositionering bevestigd via XP Metal Detectors.",
     },
   },
 ];
