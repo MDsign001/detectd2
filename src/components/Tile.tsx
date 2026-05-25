@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
 type TileProps = {
-  to: "/manuals" | "/update" | "/programs" | "/tips" | "/links";
+  to: "/manuals" | "/update" | "/programs" | "/tips" | "/links" | "/faq";
   emoji: string;
   label: string;
   desc: string;
