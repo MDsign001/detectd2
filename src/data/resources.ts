@@ -11,18 +11,58 @@ export const updates = [
   { icon: "🔊", name: "Update WSA II/XL", sub: "Firmware WSA II/XL koptelefoon" },
 ];
 
-export const linkGroups: Record<string, string[]> = {
-  "Facebook": ["XP Deus 2 Groep", "XP Officieel"],
-  "YouTube": [
-    "Detect & Discover",
-    "Veld & Vondst",
-    "Bodemverhalen NL",
-    "XP Officieel",
+export type ResourceLink = { name: string; url: string; description?: string };
+
+export const linkGroups: Record<string, ResourceLink[]> = {
+  Facebook: [
+    {
+      name: "XP Deus 2 Groep",
+      url: "https://www.facebook.com/groups/xpdeus2",
+      description: "Nederlandstalige community rond de Deus 2",
+    },
+    {
+      name: "XP Officieel",
+      url: "https://www.facebook.com/XPMetalDetectorsOfficial",
+      description: "Officiële XP Metal Detectors pagina",
+    },
   ],
-  "Websites": [
-    "XP Officieel",
-    "detect.nl webshop",
-    "Vondsten-encyclopedie",
-    "Determinatietabellen",
+  YouTube: [
+    {
+      name: "XP Officieel",
+      url: "https://www.youtube.com/@XPMetalDetectors",
+      description: "Officieel kanaal van XP Metal Detectors",
+    },
+    {
+      name: "Detect & Discover",
+      url: "https://www.youtube.com/results?search_query=detect+and+discover+metal+detecting",
+      description: "Vondsten en veldverslagen",
+    },
+  ],
+  Websites: [
+    {
+      name: "detect.nl webshop",
+      url: "https://www.detect.nl",
+      description: "Officiële webshop voor detectors en accessoires",
+    },
+    {
+      name: "XP Officieel",
+      url: "https://www.xpmetaldetectors.com",
+      description: "Fabrikant XP Metal Detectors",
+    },
+    {
+      name: "piepkaart.nl",
+      url: "https://www.piepkaart.nl",
+      description: "Kaart met zoektoestemmingen en detectie-info",
+    },
+    {
+      name: "ahn.nl",
+      url: "https://www.ahn.nl",
+      description: "Actueel Hoogtebestand Nederland — hoogtekaarten",
+    },
+    {
+      name: "topotijdreis.nl",
+      url: "https://www.topotijdreis.nl",
+      description: "Historische topografische kaarten door de tijd",
+    },
   ],
 };
