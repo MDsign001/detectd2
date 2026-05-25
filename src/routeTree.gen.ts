@@ -14,6 +14,7 @@ import { Route as TipsRouteImport } from './routes/tips'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as ManualsRouteImport } from './routes/manuals'
 import { Route as LinksRouteImport } from './routes/links'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -42,6 +43,11 @@ const LinksRoute = LinksRouteImport.update({
   path: '/links',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -56,6 +62,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/faq': typeof FaqRoute
   '/links': typeof LinksRoute
   '/manuals': typeof ManualsRoute
   '/programs': typeof ProgramsRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/faq': typeof FaqRoute
   '/links': typeof LinksRoute
   '/manuals': typeof ManualsRoute
   '/programs': typeof ProgramsRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/faq': typeof FaqRoute
   '/links': typeof LinksRoute
   '/manuals': typeof ManualsRoute
   '/programs': typeof ProgramsRoute
@@ -86,17 +95,27 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/faq'
     | '/links'
     | '/manuals'
     | '/programs'
     | '/tips'
     | '/update'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/links' | '/manuals' | '/programs' | '/tips' | '/update'
+  to:
+    | '/'
+    | '/about'
+    | '/faq'
+    | '/links'
+    | '/manuals'
+    | '/programs'
+    | '/tips'
+    | '/update'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/faq'
     | '/links'
     | '/manuals'
     | '/programs'
@@ -107,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  FaqRoute: typeof FaqRoute
   LinksRoute: typeof LinksRoute
   ManualsRoute: typeof ManualsRoute
   ProgramsRoute: typeof ProgramsRoute
@@ -151,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LinksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -171,6 +198,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  FaqRoute: FaqRoute,
   LinksRoute: LinksRoute,
   ManualsRoute: ManualsRoute,
   ProgramsRoute: ProgramsRoute,
@@ -180,3 +208,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
