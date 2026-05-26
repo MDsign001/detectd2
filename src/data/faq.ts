@@ -20,7 +20,7 @@ export const faq: FaqEntry[] = [
     subtitle:
       "Nieuwe hobbyisten willen weten of deze detector gebruiksvriendelijk genoeg is om mee te starten.",
     question: "Is de XP Deus II een goede metaaldetector voor beginners?",
-    intro: `Ja, de ${DEUS} is ondanks zijn geavanceerde mogelijkheden verrassend toegankelijk voor beginners. De detector beschikt over vooraf ingestelde zoekprogramma's waarmee je direct kunt starten zonder diepgaande technische kennis.`,
+    intro: `Ja, de ${DEUS} is ondanks zijn geavanceerde mogelijkheden verrassend toegankelijk voor beginners.`,
     sections: [
       {
         heading: "Belangrijke voordelen voor starters",
@@ -55,16 +55,6 @@ export const faq: FaqEntry[] = [
         ["Multifrequentie", "FMF simultaan", "Niet altijd simultaan"],
       ],
     },
-    sections: [
-      {
-        heading: "Vergelijking met concurrenten",
-        bullets: [
-          "Vergeleken met de [Minelab Manticore](https://www.detect.nl/nl/minelab-manticore/) is de Deus II vaak sneller in target separation.",
-          "Tegenover de [Minelab Equinox 900](https://www.detect.nl/nl/minelab-equinox-900/) biedt hij meer draadloze integratie.",
-          "Vergeleken met de [Nokta The Legend](https://www.detect.nl/nl/nokta-the-legend/) is de Deus II verfijnder qua audio-analyse.",
-        ],
-      },
-    ],
     source: {
       label: "Bronverificatie",
       text: "Vergelijkingen gebaseerd op officiële productspecificaties van fabrikanten.",
@@ -103,14 +93,7 @@ export const faq: FaqEntry[] = [
     sections: [
       {
         heading: "Herkenbare metaalsoorten",
-        bullets: [
-          "IJzer",
-          "Koper",
-          "Zilver",
-          "Goud",
-          "Aluminium",
-          "Brons",
-        ],
+        bullets: ["IJzer", "Koper", "Zilver", "Goud", "Aluminium", "Brons"],
       },
     ],
     closing:
@@ -122,8 +105,7 @@ export const faq: FaqEntry[] = [
   },
   {
     id: "batterij",
-    subtitle:
-      "Praktische vraag over gebruiksduur tijdens lange zoektochten.",
+    subtitle: "Praktische vraag over gebruiksduur tijdens lange zoektochten.",
     question: "Hoe lang gaat de batterij van de XP Deus II mee?",
     intro: `De ${DEUS} staat bekend om zijn uitstekende batterijduur.`,
     table: {
@@ -134,8 +116,6 @@ export const faq: FaqEntry[] = [
         ["Hoofdtelefoon", "Tot circa 30 uur"],
       ],
     },
-    closing:
-      "Veel gebruikers nemen een [powerbank](https://www.detect.nl/nl/accessoires/) mee tijdens lange detectiedagen.",
     source: {
       label: "Bronverificatie",
       text: "Batterijgegevens bevestigd via XP Metal Detectors.",
@@ -143,8 +123,7 @@ export const faq: FaqEntry[] = [
   },
   {
     id: "prijs",
-    subtitle:
-      "Budgetbewuste kopers beoordelen of de investering logisch is.",
+    subtitle: "Budgetbewuste kopers beoordelen of de investering logisch is.",
     question: "Is de XP Deus II de hoge prijs waard?",
     intro: `Voor veel serieuze detectoristen is de ${DEUS} absoluut zijn prijs waard.`,
     sections: [
@@ -177,10 +156,9 @@ export const faq: FaqEntry[] = [
         heading: "Aanraders",
         bullets: [
           "[XP MI-6 Pinpointer](https://www.detect.nl/nl/xp-mi-6-pinpointer/)",
-          "[Garrett Pro-Pointer AT](https://www.detect.nl/nl/garrett-pro-pointer-at/)",
-          "Extra [zoekspoelen](https://www.detect.nl/nl/zoekspoelen/)",
-          "[Scheppen en graafgereedschap](https://www.detect.nl/nl/scheppen/)",
-          "Beschermhoezen en accessoires",
+          "Extra zoekspoelen",
+          "Beschermhoezen",
+          "Graafgereedschap",
         ],
       },
     ],
@@ -193,8 +171,7 @@ export const faq: FaqEntry[] = [
   },
   {
     id: "vervoer",
-    subtitle:
-      "Praktische tips voor transport, opslag en bescherming.",
+    subtitle: "Praktische tips voor transport, opslag en bescherming.",
     question: "Hoe neem ik de XP Deus II veilig mee naar detectielocaties?",
     intro: `De ${DEUS} is ontworpen voor draagbaarheid en eenvoudig transport.`,
     sections: [
@@ -208,7 +185,7 @@ export const faq: FaqEntry[] = [
       },
     ],
     closing:
-      "Gebruik bij voorkeur een [detectorrugzak](https://www.detect.nl/nl/tassen-en-rugzakken/) of beschermende hardcase.",
+      "Gebruik bij voorkeur een [XP detectorrugzak](https://www.detect.nl/nl/xp-backpack-240/) of beschermende hardcase.",
     source: {
       label: "Bronverificatie",
       text: "Producteigenschappen bevestigd via XP Metal Detectors.",
@@ -216,8 +193,7 @@ export const faq: FaqEntry[] = [
   },
   {
     id: "problemen",
-    subtitle:
-      "Problemen oplossen bij storingen of onverwacht gedrag.",
+    subtitle: "Problemen oplossen bij storingen of onverwacht gedrag.",
     question: "Waarom functioneert mijn XP Deus II niet correct?",
     intro: `Problemen met de ${DEUS} worden meestal veroorzaakt door instellingen of omgevingsfactoren.`,
     sections: [
@@ -256,7 +232,7 @@ export const faq: FaqEntry[] = [
         ],
       },
     ],
-    closing: `Wie regelmatig gaat zoeken, kiest uiteindelijk vaak voor een eigen ${DEUS} of ander high-end model. Bekijk het aanbod [metaaldetectors](https://www.detect.nl/nl/metaaldetectors/) voor verschillende instap- en premium modellen.`,
+    closing: `Wie regelmatig gaat zoeken, kiest uiteindelijk vaak voor een eigen ${DEUS}.`,
     source: {
       label: "Bronverificatie",
       text: "Productpositionering bevestigd via XP Metal Detectors.",
