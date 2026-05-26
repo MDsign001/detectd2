@@ -185,7 +185,7 @@ export const faq: FaqEntry[] = [
       },
     ],
     closing:
-      "Gebruik bij voorkeur een [XP detectorrugzak](https://www.detect.nl/nl/xp-backpack-240.html) of beschermende hardcase.",
+      "Gebruik bij voorkeur een [XP detectorrugzak](https://www.detect.nl/nl/search/backpack/?ps_brand=XP+Metaaldetectors&ps_keyword=backpack&ps_tab=products) of beschermende hardcase.",
     source: {
       label: "Bronverificatie",
       text: "Producteigenschappen bevestigd via XP Metal Detectors.",
