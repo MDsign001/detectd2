@@ -12,7 +12,7 @@ export type FaqEntry = {
   source: { label: string; text: string };
 };
 
-const DEUS = "[XP Deus II](https://www.detect.nl/nl/xp-deus-2/)";
+const DEUS = "[XP Deus II](https://www.detect.nl/nl/metaaldetectors/merken/xp-metaaldetectors/xp-deus-2-metaaldetectors/)";
 
 export const faq: FaqEntry[] = [
   {
@@ -155,7 +155,7 @@ export const faq: FaqEntry[] = [
       {
         heading: "Aanraders",
         bullets: [
-          "[XP MI-6 Pinpointer](https://www.detect.nl/nl/xp-mi-6-pinpointer/)",
+          "[XP MI-6 Pinpointer](https://www.detect.nl/nl/xp-mi-6.html)",
           "Extra zoekspoelen",
           "Beschermhoezen",
           "Graafgereedschap",
@@ -185,7 +185,7 @@ export const faq: FaqEntry[] = [
       },
     ],
     closing:
-      "Gebruik bij voorkeur een [XP detectorrugzak](https://www.detect.nl/nl/xp-backpack-240/) of beschermende hardcase.",
+      "Gebruik bij voorkeur een [XP detectorrugzak](https://www.detect.nl/nl/xp-backpack-240.html) of beschermende hardcase.",
     source: {
       label: "Bronverificatie",
       text: "Producteigenschappen bevestigd via XP Metal Detectors.",
