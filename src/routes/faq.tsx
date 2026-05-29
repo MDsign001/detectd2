@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Fragment, type ReactNode } from "react";
+import { Fragment, useMemo, useState, type ReactNode } from "react";
+import { Search } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import {
   Accordion,
@@ -7,7 +8,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faq } from "@/data/faq";
+import { Input } from "@/components/ui/input";
+import { faq, type FaqEntry } from "@/data/faq";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -16,12 +18,23 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "Tien veelgestelde vragen over de XP Deus II: voor beginners, vergelijking, goud, batterijduur, accessoires en meer.",
+          "Twintig veelgestelde vragen over de XP Deus II: voor beginners, vergelijking, goud, batterijduur, accessoires en meer.",
       },
     ],
   }),
   component: FaqPage,
 });
+
+function entryHaystack(item: FaqEntry): string {
+  const parts = [item.question, item.subtitle, item.intro, item.closing ?? ""];
+  item.sections?.forEach((s) => {
+    parts.push(s.heading, s.paragraph ?? "", ...(s.bullets ?? []));
+  });
+  if (item.table) {
+    parts.push(...item.table.headers, ...item.table.rows.flat());
+  }
+  return parts.join(" ").toLowerCase();
+}
 
 // Render text containing [label](url) as inline links.
 function renderInline(text: string): ReactNode {
