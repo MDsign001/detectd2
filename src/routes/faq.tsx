@@ -183,9 +183,9 @@ function FaqPage() {
                 {item.source.text}
               </div>
             </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+          ))}
+        </Accordion>
+      )}
     </PageShell>
   );
 }
