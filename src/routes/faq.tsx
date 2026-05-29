@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Fragment, type ReactNode } from "react";
+import { Fragment, useMemo, useState, type ReactNode } from "react";
+import { Search } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import {
   Accordion,
@@ -7,7 +8,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faq } from "@/data/faq";
+import { Input } from "@/components/ui/input";
+import { faq, type FaqEntry } from "@/data/faq";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -16,12 +18,23 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "Tien veelgestelde vragen over de XP Deus II: voor beginners, vergelijking, goud, batterijduur, accessoires en meer.",
+          "Twintig veelgestelde vragen over de XP Deus II: voor beginners, vergelijking, goud, batterijduur, accessoires en meer.",
       },
     ],
   }),
   component: FaqPage,
 });
+
+function entryHaystack(item: FaqEntry): string {
+  const parts = [item.question, item.subtitle, item.intro, item.closing ?? ""];
+  item.sections?.forEach((s) => {
+    parts.push(s.heading, s.paragraph ?? "", ...(s.bullets ?? []));
+  });
+  if (item.table) {
+    parts.push(...item.table.headers, ...item.table.rows.flat());
+  }
+  return parts.join(" ").toLowerCase();
+}
 
 // Render text containing [label](url) as inline links.
 function renderInline(text: string): ReactNode {
@@ -50,6 +63,14 @@ function renderInline(text: string): ReactNode {
 }
 
 function FaqPage() {
+  const [query, setQuery] = useState("");
+  const trimmed = query.trim().toLowerCase();
+  const filtered = useMemo(() => {
+    const indexed = faq.map((item, i) => ({ item, number: i + 1 }));
+    if (!trimmed) return indexed;
+    return indexed.filter(({ item }) => entryHaystack(item).includes(trimmed));
+  }, [trimmed]);
+
   return (
     <PageShell title="FAQ">
       <section className="rounded-2xl border border-border bg-card px-4 py-4 shadow-card">
@@ -60,25 +81,50 @@ function FaqPage() {
           Alles wat je wilt weten over de XP Deus II — kort, eerlijk en
           to-the-point.
         </p>
+        <div className="relative mt-3">
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Zoek in vragen en antwoorden..."
+            className="pl-9"
+            aria-label="Zoek in FAQ"
+          />
+        </div>
+        <p className="mt-2 text-xs text-muted-foreground">
+          {filtered.length} van {faq.length} {filtered.length === 1 ? "vraag" : "vragen"}
+        </p>
       </section>
 
-      <Accordion type="single" collapsible className="mt-4 space-y-2">
-        {faq.map((item) => (
-          <AccordionItem
-            key={item.id}
-            value={item.id}
-            className="rounded-2xl border border-border bg-card px-4 shadow-card"
-          >
-            <AccordionTrigger className="text-left hover:no-underline">
-              <div>
-                <div className="text-base font-semibold text-foreground">
-                  {item.question}
+      {filtered.length === 0 ? (
+        <div className="mt-4 rounded-2xl border border-border bg-card px-4 py-6 text-center text-sm text-muted-foreground shadow-card">
+          Geen vragen gevonden voor "{query}".
+        </div>
+      ) : (
+        <Accordion type="single" collapsible className="mt-4 space-y-2">
+          {filtered.map(({ item, number }) => (
+            <AccordionItem
+              key={item.id}
+              value={item.id}
+              className="rounded-2xl border border-border bg-card px-4 shadow-card"
+            >
+              <AccordionTrigger className="text-left hover:no-underline">
+                <div className="flex gap-3">
+                  <span className="shrink-0 font-display text-base font-bold text-primary tabular-nums">
+                    {String(number).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <div className="text-base font-semibold text-foreground">
+                      {item.question}
+                    </div>
+                    <div className="mt-1 text-xs font-normal text-muted-foreground">
+                      {item.subtitle}
+                    </div>
+                  </div>
                 </div>
-                <div className="mt-1 text-xs font-normal text-muted-foreground">
-                  {item.subtitle}
-                </div>
-              </div>
-            </AccordionTrigger>
+              </AccordionTrigger>
+
             <AccordionContent className="space-y-4 text-sm leading-relaxed text-foreground/90">
               <p>{renderInline(item.intro)}</p>
 
@@ -138,8 +184,9 @@ function FaqPage() {
               </div>
             </AccordionContent>
           </AccordionItem>
-        ))}
-      </Accordion>
+          ))}
+        </Accordion>
+      )}
     </PageShell>
   );
 }
