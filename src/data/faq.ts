@@ -238,4 +238,232 @@ export const faq: FaqEntry[] = [
       text: "Productpositionering bevestigd via XP Metal Detectors.",
     },
   },
+  {
+    id: "waterdicht",
+    subtitle:
+      "Detectieliefhebbers willen weten of de detector geschikt is voor strand en onderwatergebruik.",
+    question: "Is de XP Deus II waterdicht?",
+    intro: `Ja, de ${DEUS} is volledig waterdicht en ontworpen voor gebruik op stranden, in rivieren en zelfs onder water.`,
+    sections: [
+      {
+        heading: "Waterdichte eigenschappen",
+        bullets: [
+          "Waterdicht tot 20 meter",
+          "Geschikt voor zoet en zout water",
+          "Draadloze technologie ook onder water bruikbaar",
+          "Ideaal voor stranddetectie",
+        ],
+      },
+    ],
+    closing:
+      "Vooral strandzoekers waarderen de stabiele prestaties van de Deus II in nat zand en zoutwateromgevingen.",
+    source: {
+      label: "Bronverificatie",
+      text: "Waterdichtheid bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "programmas",
+    subtitle: "Gebruikers willen weten welke ingebouwde modi beschikbaar zijn.",
+    question: "Welke zoekprogramma's heeft de XP Deus II?",
+    intro: `De ${DEUS} beschikt over meerdere vooraf ingestelde zoekprogramma's voor verschillende omstandigheden.`,
+    sections: [
+      {
+        heading: "Standaard zoekprogramma's",
+        bullets: ["General", "Sensitive", "Deep HC", "Fast", "Beach", "Diving"],
+      },
+    ],
+    closing:
+      "Daarnaast kunnen gebruikers volledig eigen programma's aanmaken en opslaan.",
+    source: {
+      label: "Bronverificatie",
+      text: "Zoekprogramma's bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "diepte",
+    subtitle:
+      "Veel detectoristen willen weten hoe diep targets gevonden kunnen worden.",
+    question: "Hoe diep kan de XP Deus II detecteren?",
+    intro: `De detectiediepte van de ${DEUS} hangt af van meerdere factoren.`,
+    sections: [
+      {
+        heading: "Bepalende factoren",
+        bullets: [
+          "Grootte van het object",
+          "Bodemmineralisatie",
+          "Zoekfrequentie",
+          "Zoekspoel",
+          "Instellingen van de detector",
+        ],
+      },
+    ],
+    closing:
+      "Grote objecten kunnen aanzienlijk dieper worden gedetecteerd dan kleine munten of sieraden.",
+    source: {
+      label: "Bronverificatie",
+      text: "Prestatiegegevens bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "updates",
+    subtitle:
+      "Gebruikers willen weten of functies later uitgebreid kunnen worden.",
+    question: "Heeft de XP Deus II software-updates?",
+    intro: `Ja, de ${DEUS} ontvangt regelmatig firmware-updates van XP.`,
+    sections: [
+      {
+        heading: "Wat updates brengen",
+        bullets: [
+          "Nieuwe functies",
+          "Prestatieverbeteringen",
+          "Extra instellingen",
+          "Optimalisaties voor stabiliteit",
+        ],
+      },
+    ],
+    closing:
+      "Updates worden via een computer geïnstalleerd met officiële XP software.",
+    source: {
+      label: "Bronverificatie",
+      text: "Firmware-ondersteuning bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "zoekspoel",
+    subtitle: "Gebruikers zoeken de ideale spoel voor hun zoekstijl.",
+    question: "Welke zoekspoel is het beste voor de XP Deus II?",
+    intro: `De beste zoekspoel voor de ${DEUS} hangt af van het terrein en het type targets.`,
+    sections: [
+      {
+        heading: "Spoelkeuze per situatie",
+        bullets: [
+          "Kleine spoelen voor vervuilde locaties",
+          "Grotere spoelen voor maximale diepte",
+          "Ronde spoelen voor allround gebruik",
+        ],
+      },
+    ],
+    closing:
+      "Veel detectoristen gebruiken meerdere spoelen afhankelijk van de zoeklocatie.",
+    source: {
+      label: "Bronverificatie",
+      text: "Compatibiliteit bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "strand",
+    subtitle: "Strandzoekers willen stabiele prestaties in zoutwateromgevingen.",
+    question: "Is de XP Deus II geschikt voor stranddetectie?",
+    intro: `Ja, de ${DEUS} wordt beschouwd als een uitstekende detector voor stranddetectie.`,
+    sections: [
+      {
+        heading: "Sterke punten op het strand",
+        bullets: [
+          "Stabiel op nat zout zand",
+          "Waterdicht ontwerp",
+          "Speciale beach-programma's",
+          "Goede gevoeligheid voor sieraden",
+        ],
+      },
+    ],
+    closing:
+      "Vooral de FMF-technologie helpt bij stabiele prestaties in moeilijke strandomstandigheden.",
+    source: {
+      label: "Bronverificatie",
+      text: "Strandfunctionaliteiten bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "hoofdtelefoon",
+    subtitle: "Gebruikers willen weten welke audio-opties compatibel zijn.",
+    question: "Welke hoofdtelefoon werkt met de XP Deus II?",
+    intro: `De ${DEUS} ondersteunt verschillende draadloze XP hoofdtelefoons.`,
+    sections: [
+      {
+        heading: "Compatibele hoofdtelefoons",
+        bullets: [
+          "WS6",
+          "WSA II",
+          "WSA II XL",
+          "Bone conduction hoofdtelefoon voor onderwatergebruik",
+        ],
+      },
+    ],
+    closing:
+      "De draadloze audio van XP staat bekend om lage latency en duidelijke targettonen.",
+    source: {
+      label: "Bronverificatie",
+      text: "Audio-accessoires bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "instellingen",
+    subtitle: "Beginners zoeken optimale instellingen voor betere prestaties.",
+    question: "Hoe stel je de XP Deus II het beste af?",
+    intro: `Goede instellingen voor de ${DEUS} hangen af van terrein en zoekdoel.`,
+    sections: [
+      {
+        heading: "Basistips",
+        bullets: [
+          "Gebruik een stabiele gevoeligheid",
+          "Houd discriminatie laag",
+          "Kies een passend zoekprogramma",
+          "Gebruik hogere frequenties voor kleine targets",
+        ],
+      },
+    ],
+    closing:
+      "Veel gebruikers starten met het General-programma voordat ze geavanceerde instellingen aanpassen.",
+    source: {
+      label: "Bronverificatie",
+      text: "Instellingsmogelijkheden bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "merk-xp",
+    subtitle: "Kopers vergelijken merkvoorkeuren binnen de hobby.",
+    question: "Waarom kiezen veel detectoristen voor XP?",
+    intro: `XP staat bekend om innovatieve, lichte en snelle metaaldetectoren zoals de ${DEUS}.`,
+    sections: [
+      {
+        heading: "Waarom XP populair is",
+        bullets: [
+          "Volledig draadloze technologie",
+          "Zeer laag gewicht",
+          "Snelle target separation",
+          "Regelmatige software-updates",
+        ],
+      },
+    ],
+    closing:
+      "Vooral ervaren detectoristen waarderen de uitgebreide instelmogelijkheden van XP detectors.",
+    source: {
+      label: "Bronverificatie",
+      text: "Producteigenschappen bevestigd via XP Metal Detectors.",
+    },
+  },
+  {
+    id: "munten",
+    subtitle: "Hobbyisten zoeken een detector voor oude en moderne munten.",
+    question: "Is de XP Deus II geschikt voor muntendetectie?",
+    intro: `Ja, de ${DEUS} presteert uitstekend bij muntendetectie.`,
+    sections: [
+      {
+        heading: "Sterke punten voor munten",
+        bullets: [
+          "Goede target separation",
+          "Nauwkeurige Target ID",
+          "Geschikt voor oude akkers",
+          "Snelle respons op kleine targets",
+        ],
+      },
+    ],
+    closing:
+      "Vooral in ijzerrijke grond kan de Deus II waardevolle munten goed onderscheiden van afvalmetaal.",
+    source: {
+      label: "Bronverificatie",
+      text: "Detectieprestaties bevestigd via XP Metal Detectors.",
+    },
+  },
 ];
