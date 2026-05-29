@@ -183,7 +183,6 @@ function FaqPage() {
                 {item.source.text}
               </div>
             </AccordionContent>
-            </AccordionContent>
           </AccordionItem>
           ))}
         </Accordion>
