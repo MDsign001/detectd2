@@ -15,8 +15,7 @@ export const Route = createFileRoute("/manuals")({
       { property: "og:title", content: "Handleidingen — detect.nl Companion" },
       {
         property: "og:description",
-        content:
-          "Documentatie voor RC, WS6 en MI-6/4 — altijd binnen handbereik.",
+        content: "Documentatie voor RC, WS6 en MI-6/4 — altijd binnen handbereik.",
       },
     ],
   }),
@@ -43,9 +42,7 @@ function ManualsPage() {
               </div>
               <div>
                 <div className="text-sm font-medium text-foreground">{m.name}</div>
-                <div className="mt-0.5 text-[11px] text-muted-foreground">
-                  {m.sub}
-                </div>
+                <div className="mt-0.5 text-[11px] text-muted-foreground">{m.sub}</div>
               </div>
             </div>
             <Download className="h-4 w-4 text-primary" />

@@ -30,15 +30,27 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "DetectD2" },
-      { name: "description", content: "Gemaakt door Detect.nl. Voor gebruikers van de Deus II metaaldetector van het merk XP Metaldetectors." },
+      {
+        name: "description",
+        content:
+          "Gemaakt door Detect.nl. Voor gebruikers van de Deus II metaaldetector van het merk XP Metaldetectors.",
+      },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "DetectD2" },
-      { property: "og:description", content: "Gemaakt door Detect.nl. Voor gebruikers van de Deus II metaaldetector van het merk XP Metaldetectors." },
+      {
+        property: "og:description",
+        content:
+          "Gemaakt door Detect.nl. Voor gebruikers van de Deus II metaaldetector van het merk XP Metaldetectors.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "DetectD2" },
-      { name: "twitter:description", content: "Gemaakt door Detect.nl. Voor gebruikers van de Deus II metaaldetector van het merk XP Metaldetectors." },
+      {
+        name: "twitter:description",
+        content:
+          "Gemaakt door Detect.nl. Voor gebruikers van de Deus II metaaldetector van het merk XP Metaldetectors.",
+      },
     ],
     links: [
       {
