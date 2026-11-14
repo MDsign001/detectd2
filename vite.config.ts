@@ -6,4 +6,15 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig();
+const isMobileBuild = !!process.env.MOBILE_BUILD;
+
+export default defineConfig(
+  isMobileBuild
+    ? {
+        cloudflare: false,
+        tanstackStart: {
+          spa: { enabled: true },
+        },
+      }
+    : {},
+);
