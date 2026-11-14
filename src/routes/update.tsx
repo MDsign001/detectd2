@@ -9,8 +9,7 @@ export const Route = createFileRoute("/update")({
       { title: "Firmware Update — detect.nl Companion" },
       {
         name: "description",
-        content:
-          "Tips en links om je XP DEUS II RC en koptelefoon firmware bij te werken.",
+        content: "Tips en links om je XP DEUS II RC en koptelefoon firmware bij te werken.",
       },
       { property: "og:title", content: "Firmware Update — detect.nl Companion" },
       {
@@ -26,17 +25,11 @@ function UpdatePage() {
   return (
     <PageShell title="Firmware Update">
       <div className="mb-3 mt-1 rounded-2xl border border-primary/30 bg-accent px-4 py-3">
-        <div className="mb-2 text-[13px] font-bold text-primary">
-          ⚠ Tips voor het updaten
-        </div>
+        <div className="mb-2 text-[13px] font-bold text-primary">⚠ Tips voor het updaten</div>
         <ul className="list-disc space-y-1 pl-5 text-[13px] leading-relaxed text-foreground/80">
           <li>Gebruik de online updater.</li>
-          <li>
-            Sluit de USB-kabel van RC of headset pas als laatste aan op je computer.
-          </li>
-          <li>
-            Bij de headset: gebruik de losse kabel — niet de drievoudige.
-          </li>
+          <li>Sluit de USB-kabel van RC of headset pas als laatste aan op je computer.</li>
+          <li>Bij de headset: gebruik de losse kabel — niet de drievoudige.</li>
         </ul>
       </div>
 
@@ -57,9 +50,7 @@ function UpdatePage() {
               </div>
               <div>
                 <div className="text-sm font-medium text-foreground">{u.name}</div>
-                <div className="mt-0.5 text-[11px] text-muted-foreground">
-                  {u.sub}
-                </div>
+                <div className="mt-0.5 text-[11px] text-muted-foreground">{u.sub}</div>
               </div>
             </div>
             <ExternalLink className="h-4 w-4 text-primary" />

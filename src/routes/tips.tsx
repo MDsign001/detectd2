@@ -29,16 +29,9 @@ function TipsPage() {
       </div>
       <ul className="space-y-2">
         {tips.map((tip) => (
-          <li
-            key={tip.title}
-            className="rounded-2xl border border-border bg-card px-4 py-3.5"
-          >
-            <div className="font-display text-sm font-bold text-primary">
-              {tip.title}
-            </div>
-            <p className="mt-1 text-[13px] leading-relaxed text-foreground/80">
-              {tip.body}
-            </p>
+          <li key={tip.title} className="rounded-2xl border border-border bg-card px-4 py-3.5">
+            <div className="font-display text-sm font-bold text-primary">{tip.title}</div>
+            <p className="mt-1 text-[13px] leading-relaxed text-foreground/80">{tip.body}</p>
           </li>
         ))}
       </ul>

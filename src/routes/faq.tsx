@@ -74,12 +74,9 @@ function FaqPage() {
   return (
     <PageShell title="FAQ">
       <section className="rounded-2xl border border-border bg-card px-4 py-4 shadow-card">
-        <h1 className="font-display text-2xl font-extrabold text-primary">
-          Veelgestelde vragen
-        </h1>
+        <h1 className="font-display text-2xl font-extrabold text-primary">Veelgestelde vragen</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Alles wat je wilt weten over de XP Deus II — kort, eerlijk en
-          to-the-point.
+          Alles wat je wilt weten over de XP Deus II — kort, eerlijk en to-the-point.
         </p>
         <div className="relative mt-3">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -115,9 +112,7 @@ function FaqPage() {
                     {String(number).padStart(2, "0")}
                   </span>
                   <div>
-                    <div className="text-base font-semibold text-foreground">
-                      {item.question}
-                    </div>
+                    <div className="text-base font-semibold text-foreground">{item.question}</div>
                     <div className="mt-1 text-xs font-normal text-muted-foreground">
                       {item.subtitle}
                     </div>
@@ -125,65 +120,61 @@ function FaqPage() {
                 </div>
               </AccordionTrigger>
 
-            <AccordionContent className="space-y-4 text-sm leading-relaxed text-foreground/90">
-              <p>{renderInline(item.intro)}</p>
+              <AccordionContent className="space-y-4 text-sm leading-relaxed text-foreground/90">
+                <p>{renderInline(item.intro)}</p>
 
-              {item.table && (
-                <div className="overflow-x-auto rounded-xl border border-border">
-                  <table className="w-full text-left text-xs">
-                    <thead className="bg-muted text-foreground">
-                      <tr>
-                        {item.table.headers.map((h) => (
-                          <th key={h} className="px-3 py-2 font-semibold">
-                            {h}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {item.table.rows.map((row, i) => (
-                        <tr
-                          key={i}
-                          className="border-t border-border odd:bg-background even:bg-muted/40"
-                        >
-                          {row.map((c, j) => (
-                            <td key={j} className="px-3 py-2 align-top">
-                              {renderInline(c)}
-                            </td>
+                {item.table && (
+                  <div className="overflow-x-auto rounded-xl border border-border">
+                    <table className="w-full text-left text-xs">
+                      <thead className="bg-muted text-foreground">
+                        <tr>
+                          {item.table.headers.map((h) => (
+                            <th key={h} className="px-3 py-2 font-semibold">
+                              {h}
+                            </th>
                           ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {item.table.rows.map((row, i) => (
+                          <tr
+                            key={i}
+                            className="border-t border-border odd:bg-background even:bg-muted/40"
+                          >
+                            {row.map((c, j) => (
+                              <td key={j} className="px-3 py-2 align-top">
+                                {renderInline(c)}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+
+                {item.sections?.map((sec) => (
+                  <div key={sec.heading}>
+                    <h3 className="mb-1 text-sm font-semibold text-primary">{sec.heading}</h3>
+                    {sec.paragraph && <p>{renderInline(sec.paragraph)}</p>}
+                    {sec.bullets && (
+                      <ul className="ml-4 list-disc space-y-1">
+                        {sec.bullets.map((b) => (
+                          <li key={b}>{renderInline(b)}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+
+                {item.closing && <p>{renderInline(item.closing)}</p>}
+
+                <div className="rounded-xl border border-border bg-muted px-3 py-2 text-xs text-muted-foreground">
+                  <span className="font-semibold text-foreground">{item.source.label}:</span>{" "}
+                  {item.source.text}
                 </div>
-              )}
-
-              {item.sections?.map((sec) => (
-                <div key={sec.heading}>
-                  <h3 className="mb-1 text-sm font-semibold text-primary">
-                    {sec.heading}
-                  </h3>
-                  {sec.paragraph && <p>{renderInline(sec.paragraph)}</p>}
-                  {sec.bullets && (
-                    <ul className="ml-4 list-disc space-y-1">
-                      {sec.bullets.map((b) => (
-                        <li key={b}>{renderInline(b)}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-
-              {item.closing && <p>{renderInline(item.closing)}</p>}
-
-              <div className="rounded-xl border border-border bg-muted px-3 py-2 text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">
-                  {item.source.label}:
-                </span>{" "}
-                {item.source.text}
-              </div>
-            </AccordionContent>
-          </AccordionItem>
+              </AccordionContent>
+            </AccordionItem>
           ))}
         </Accordion>
       )}

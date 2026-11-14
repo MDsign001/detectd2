@@ -5,14 +5,9 @@ function ParamGrid({ entries }: { entries: [string, string][] }) {
   return (
     <div className="grid grid-cols-2 gap-1.5">
       {entries.map(([k, v]) => (
-        <div
-          key={k}
-          className="rounded-xl border border-border bg-background px-3 py-2"
-        >
+        <div key={k} className="rounded-xl border border-border bg-background px-3 py-2">
           <div className="text-[10px] text-muted-foreground">{k}</div>
-          <div className="font-display text-sm font-bold text-foreground">
-            {v}
-          </div>
+          <div className="font-display text-sm font-bold text-foreground">{v}</div>
         </div>
       ))}
     </div>
@@ -109,10 +104,7 @@ export function ProgramCard({ program }: { program: Program }) {
         {(program.notes?.length || program.motto) && (
           <div className="mt-4 rounded-xl border border-border border-l-[3px] border-l-primary bg-muted px-4 py-3">
             {program.notes?.map((n, i) => (
-              <p
-                key={i}
-                className="mb-1 text-[12px] leading-relaxed text-foreground/75"
-              >
+              <p key={i} className="mb-1 text-[12px] leading-relaxed text-foreground/75">
                 {n}
               </p>
             ))}
