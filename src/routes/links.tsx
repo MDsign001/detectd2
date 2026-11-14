@@ -9,8 +9,7 @@ export const Route = createFileRoute("/links")({
       { title: "Bronnen & Links — detect.nl Companion" },
       {
         name: "description",
-        content:
-          "Handige Facebook-groepen, YouTube-kanalen en websites voor metaaldetectoristen.",
+        content: "Handige Facebook-groepen, YouTube-kanalen en websites voor metaaldetectoristen.",
       },
       { property: "og:title", content: "Bronnen — detect.nl Companion" },
       {
@@ -40,13 +39,9 @@ function LinksPage() {
                   className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-primary"
                 >
                   <span className="flex flex-col">
-                    <span className="text-sm font-medium text-foreground">
-                      {item.name}
-                    </span>
+                    <span className="text-sm font-medium text-foreground">{item.name}</span>
                     {item.description && (
-                      <span className="text-xs text-muted-foreground">
-                        {item.description}
-                      </span>
+                      <span className="text-xs text-muted-foreground">{item.description}</span>
                     )}
                   </span>
                   <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />

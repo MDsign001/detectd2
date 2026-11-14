@@ -5,9 +5,7 @@ export function AppFooter() {
   return (
     <footer className="mt-8 flex flex-col items-center gap-2 border-t border-border px-4 py-6 text-center">
       <img src={LOGO_URL} alt="detect.nl" className="h-5 w-auto opacity-70" />
-      <p className="text-xs text-muted-foreground">
-        Elke piep is hoop. Elke vondst een verhaal.
-      </p>
+      <p className="text-xs text-muted-foreground">Elke piep is hoop. Elke vondst een verhaal.</p>
     </footer>
   );
 }

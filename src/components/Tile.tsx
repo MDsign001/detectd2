@@ -20,9 +20,7 @@ export function Tile({ to, emoji, label, desc }: TileProps) {
         <div className="font-display text-sm font-bold text-foreground group-hover:text-primary">
           {label}
         </div>
-        <div className="mt-1 text-xs leading-snug text-muted-foreground">
-          {desc}
-        </div>
+        <div className="mt-1 text-xs leading-snug text-muted-foreground">{desc}</div>
       </div>
     </Link>
   );

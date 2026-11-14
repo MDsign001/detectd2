@@ -12,7 +12,8 @@ export type FaqEntry = {
   source: { label: string; text: string };
 };
 
-const DEUS = "[XP Deus II](https://www.detect.nl/nl/metaaldetectors/merken/xp-metaaldetectors/xp-deus-2-metaaldetectors/)";
+const DEUS =
+  "[XP Deus II](https://www.detect.nl/nl/metaaldetectors/merken/xp-metaaldetectors/xp-deus-2-metaaldetectors/)";
 
 export const faq: FaqEntry[] = [
   {
@@ -42,10 +43,8 @@ export const faq: FaqEntry[] = [
   },
   {
     id: "vergelijking",
-    subtitle:
-      "Kopers vergelijken verschillende merken en modellen voordat ze investeren.",
-    question:
-      "Hoe presteert de XP Deus II vergeleken met andere high-end metaaldetectoren?",
+    subtitle: "Kopers vergelijken verschillende merken en modellen voordat ze investeren.",
+    question: "Hoe presteert de XP Deus II vergeleken met andere high-end metaaldetectoren?",
     intro: `De ${DEUS} behoort tot de absolute topklasse van moderne metaaldetectoren.`,
     table: {
       headers: ["Eigenschap", "XP Deus II", "Veel concurrenten"],
@@ -62,15 +61,13 @@ export const faq: FaqEntry[] = [
   },
   {
     id: "goud",
-    subtitle:
-      "Schatzoekers willen weten of de detector geschikt is voor goudvondsten.",
+    subtitle: "Schatzoekers willen weten of de detector geschikt is voor goudvondsten.",
     question: "Kan de XP Deus II goud detecteren?",
     intro: `Ja, de ${DEUS} kan goud detecteren, inclusief kleine sieraden en sommige natuurlijke goudfragmenten.`,
     sections: [
       {
         heading: "Dankzij simultane multifrequentie",
-        paragraph:
-          "De detector blijft gevoelig voor zowel kleine als diepe targets.",
+        paragraph: "De detector blijft gevoelig voor zowel kleine als diepe targets.",
       },
       {
         heading: "Veelgevonden goudobjecten",
@@ -87,8 +84,7 @@ export const faq: FaqEntry[] = [
   {
     id: "metalen",
     subtitle: "Begrijpen welke metaalsoorten de detector kan identificeren.",
-    question:
-      "Welke soorten metaal kan de XP Deus II detecteren en herkennen?",
+    question: "Welke soorten metaal kan de XP Deus II detecteren en herkennen?",
     intro: `De ${DEUS} kan vrijwel alle gangbare metalen detecteren.`,
     sections: [
       {
@@ -147,8 +143,7 @@ export const faq: FaqEntry[] = [
   },
   {
     id: "accessoires",
-    subtitle:
-      "Nieuwe eigenaren zoeken nuttige accessoires en extra uitrusting.",
+    subtitle: "Nieuwe eigenaren zoeken nuttige accessoires en extra uitrusting.",
     question: "Welke accessoires zijn handig bij een nieuwe XP Deus II?",
     intro: `Bij een ${DEUS} zijn enkele accessoires bijzonder nuttig.`,
     sections: [
@@ -162,8 +157,7 @@ export const faq: FaqEntry[] = [
         ],
       },
     ],
-    closing:
-      "Veel Deus II-gebruikers beschouwen een goede pinpointer als de beste eerste upgrade.",
+    closing: "Veel Deus II-gebruikers beschouwen een goede pinpointer als de beste eerste upgrade.",
     source: {
       label: "Bronverificatie",
       text: "Compatibele accessoires bevestigd via XP Metal Detectors.",
@@ -177,11 +171,7 @@ export const faq: FaqEntry[] = [
     sections: [
       {
         heading: "Wat het meenemen makkelijk maakt",
-        bullets: [
-          "Lichtgewicht constructie",
-          "Opvouwbare steel",
-          "Compact draadloos ontwerp",
-        ],
+        bullets: ["Lichtgewicht constructie", "Opvouwbare steel", "Compact draadloos ontwerp"],
       },
     ],
     closing:
@@ -216,10 +206,8 @@ export const faq: FaqEntry[] = [
   },
   {
     id: "huren",
-    subtitle:
-      "Budgetvriendelijk alternatief voor mensen die eerst willen proberen.",
-    question:
-      "Kun je beter een metaaldetector huren voordat je er een koopt?",
+    subtitle: "Budgetvriendelijk alternatief voor mensen die eerst willen proberen.",
+    question: "Kun je beter een metaaldetector huren voordat je er een koopt?",
     intro:
       "Ja, huren is voor veel beginners een slimme manier om de hobby eerst uit te proberen zonder direct een grote investering te doen.",
     sections: [
@@ -273,8 +261,7 @@ export const faq: FaqEntry[] = [
         bullets: ["General", "Sensitive", "Deep HC", "Fast", "Beach", "Diving"],
       },
     ],
-    closing:
-      "Daarnaast kunnen gebruikers volledig eigen programma's aanmaken en opslaan.",
+    closing: "Daarnaast kunnen gebruikers volledig eigen programma's aanmaken en opslaan.",
     source: {
       label: "Bronverificatie",
       text: "Zoekprogramma's bevestigd via XP Metal Detectors.",
@@ -282,8 +269,7 @@ export const faq: FaqEntry[] = [
   },
   {
     id: "diepte",
-    subtitle:
-      "Veel detectoristen willen weten hoe diep targets gevonden kunnen worden.",
+    subtitle: "Veel detectoristen willen weten hoe diep targets gevonden kunnen worden.",
     question: "Hoe diep kan de XP Deus II detecteren?",
     intro: `De detectiediepte van de ${DEUS} hangt af van meerdere factoren.`,
     sections: [
@@ -307,8 +293,7 @@ export const faq: FaqEntry[] = [
   },
   {
     id: "updates",
-    subtitle:
-      "Gebruikers willen weten of functies later uitgebreid kunnen worden.",
+    subtitle: "Gebruikers willen weten of functies later uitgebreid kunnen worden.",
     question: "Heeft de XP Deus II software-updates?",
     intro: `Ja, de ${DEUS} ontvangt regelmatig firmware-updates van XP.`,
     sections: [
@@ -322,8 +307,7 @@ export const faq: FaqEntry[] = [
         ],
       },
     ],
-    closing:
-      "Updates worden via een computer geïnstalleerd met officiële XP software.",
+    closing: "Updates worden via een computer geïnstalleerd met officiële XP software.",
     source: {
       label: "Bronverificatie",
       text: "Firmware-ondersteuning bevestigd via XP Metal Detectors.",
@@ -344,8 +328,7 @@ export const faq: FaqEntry[] = [
         ],
       },
     ],
-    closing:
-      "Veel detectoristen gebruiken meerdere spoelen afhankelijk van de zoeklocatie.",
+    closing: "Veel detectoristen gebruiken meerdere spoelen afhankelijk van de zoeklocatie.",
     source: {
       label: "Bronverificatie",
       text: "Compatibiliteit bevestigd via XP Metal Detectors.",
@@ -390,8 +373,7 @@ export const faq: FaqEntry[] = [
         ],
       },
     ],
-    closing:
-      "De draadloze audio van XP staat bekend om lage latency en duidelijke targettonen.",
+    closing: "De draadloze audio van XP staat bekend om lage latency en duidelijke targettonen.",
     source: {
       label: "Bronverificatie",
       text: "Audio-accessoires bevestigd via XP Metal Detectors.",
